@@ -22,11 +22,8 @@ public class Vendedor {
 	@JoinColumn(name = "id_supervisor", nullable = false, foreignKey = @ForeignKey(name = "FK_vendedor_supervisor"))
 	private Supervisor supervisor;
 	
-	@Column(name = "nombre")
-	private String nombre;
-	
-	@Column(name = "vendedor")
-	private String vendedor;
+	@Column(name = "nombre_vendedor")
+	private String nombreVendedor;
 	
 	@Column(name = "dirVendedor")
 	private String dirVendedor;
@@ -47,20 +44,12 @@ public class Vendedor {
 		this.supervisor = supervisor;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreVendedor() {
+		return nombreVendedor;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getVendedor() {
-		return vendedor;
-	}
-
-	public void setVendedor(String vendedor) {
-		this.vendedor = vendedor;
+	public void setNombreVendedor(String nombreVendedor) {
+		this.nombreVendedor = nombreVendedor;
 	}
 
 	public String getDirVendedor() {

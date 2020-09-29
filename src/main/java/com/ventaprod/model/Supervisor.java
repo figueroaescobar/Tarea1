@@ -15,11 +15,8 @@ public class Supervisor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idSupervisor;
 	
-	@Column(name = "nombre")
-	private String nombre;
-	
-	@Column(name = "supervisor")
-	private String supervisor;
+	@Column(name = "nombre_supervisor")
+	private String nombreSupervisor;
 	
 	@Column(name = "dirSupervisor")
 	private String dirSupervisor;
@@ -35,20 +32,12 @@ public class Supervisor {
 		this.idSupervisor = idSupervisor;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreSupervisor() {
+		return nombreSupervisor;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getSupervisor() {
-		return supervisor;
-	}
-
-	public void setSupervisor(String supervisor) {
-		this.supervisor = supervisor;
+	public void setNombreSupervisor(String nombreSupervisor) {
+		this.nombreSupervisor = nombreSupervisor;
 	}
 
 	public String getDirSupervisor() {
@@ -66,6 +55,4 @@ public class Supervisor {
 	public void setTelSupervisor(String telSupervisor) {
 		this.telSupervisor = telSupervisor;
 	}
-	
-	
 }
