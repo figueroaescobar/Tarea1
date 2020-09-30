@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "supervidor")
@@ -15,13 +16,16 @@ public class Supervisor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idSupervisor;
 	
-	@Column(name = "nombre_supervisor")
+	@Size(min = 3, max = 50, message = "Campo Nombre Supervisor debe tener minimo 3 caracteres")
+	@Column(name = "nombre_supervisor", nullable = false, length = 50)
 	private String nombreSupervisor;
 	
-	@Column(name = "dirSupervisor")
+	@Size(min = 3, max = 100, message = "Campo Dirección Supervisor debe tener minimo 3 caracteres")
+	@Column(name = "dirSupervisor", nullable = false, length = 100)
 	private String dirSupervisor;
 	
-	@Column(name = "telSupervisor")
+	@Size(min = 5, max = 9, message = "Campo Teléfono Supervisor debe tener minimo 5 caracteres")
+	@Column(name = "telSupervisor", nullable = false, length = 9)
 	private String telSupervisor;
 
 	public Integer getIdSupervisor() {

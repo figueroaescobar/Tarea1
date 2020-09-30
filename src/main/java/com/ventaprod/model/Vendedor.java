@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "vendedor")
@@ -22,10 +23,12 @@ public class Vendedor {
 	@JoinColumn(name = "id_supervisor", nullable = false, foreignKey = @ForeignKey(name = "FK_vendedor_supervisor"))
 	private Supervisor supervisor;
 	
-	@Column(name = "nombre_vendedor")
+	@Size(min = 3, max = 50, message = "Campo Nombre Vendedor debe tener minimo 3 caracteres")
+	@Column(name = "nombre_vendedor", nullable = false, length = 50)
 	private String nombreVendedor;
 	
-	@Column(name = "dirVendedor")
+	@Size(min = 3, max = 50, message = "Campo Dirección Vendedor debe tener minimo 3 caracteres")
+	@Column(name = "dirVendedor", nullable = false, length = 50)
 	private String dirVendedor;
 
 	public Integer getIdVendedor() {
